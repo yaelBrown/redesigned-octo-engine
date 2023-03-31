@@ -1,0 +1,17 @@
+Dynamodb database
+
+create 2 tables
+  posts
+    id = int
+    title = str
+    date = str
+    summary = str
+    author = str
+    url = str
+    image = str
+    content = str
+
+  last_posts
+    id = int
+    url = str
+    last_title = str
