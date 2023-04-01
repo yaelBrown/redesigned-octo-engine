@@ -6,6 +6,7 @@ Return: return_description
 """
 import requests
 import feedparser
+import json
 
 
 # Constants
@@ -61,12 +62,13 @@ FEEDS = {
 }
 
 class Post:
-  def __init__(self, title, date, summary, author, url, image=None, content=None):
+  def __init__(self, title, date, summary, author, url, tags, image=None, content=None):
     self.title = title
     self.date = date 
     self.summary = summary
     self.author = author
     self.url = url
+    self.tags = tags
     self.image = image
     self.content = content
 
@@ -77,14 +79,15 @@ def get_feeds():
 
 # Create Post Object from feed item
 def CreatePost(entry):
-  c = entry["content"][0]["value"]
-  c = c.replace("<img ", '<img style="display: none" ')
+  c = entry["content"][0]["value"].replace("<img ", '<img style="display: none" ')
+  t = json.dumps([tag["term"] for tag in entry["tags"]])
   return Post(
     entry["title"],
     entry["published"],
     entry["summary"],
     entry["author"],
     entry["link"],
+    t,
     entry["media_content"][0]["url"],
     c
   )
