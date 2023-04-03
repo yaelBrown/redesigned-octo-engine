@@ -30,11 +30,11 @@
     'id': 'https://bitcoinmagazine.com/industry-events/miami-bitcoin-conference-will-have-ordinals-alley-art-gallery',
     'guidislink': False,
     'tags': [
-            {
-                'term': 'Industry Events',
-                'scheme': None,
-                'label': None
-            },
+        {
+            'term': 'Industry Events',
+            'scheme': None,
+            'label': None
+        },
         {
                 'term': 'Inscriptions',
                 'scheme': None,

@@ -3,11 +3,13 @@ Dynamodb database
 create 2 tables
   posts
     id = int
+    type = str('post')
     title = str
     date = str
     summary = str
     author = str
     url = str
+    tags = json
     image = str
     content = str
 

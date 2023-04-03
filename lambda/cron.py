@@ -7,9 +7,13 @@ Return: return_description
 import requests
 import feedparser
 import json
+import boto3
+import logging
 
 
 # Constants
+LOGGER = logging.getLogger()
+
 CRYPTO_BITCOINMAGAZINE = "https://bitcoinmagazine.com/.rss/full/"
 CRYPTO_COINDESK = "https://www.coindesk.com/arc/outboundfeeds/rss/"
 CRYPTO_COINTELEGRAPH = "https://cointelegraph.com/rss"
@@ -32,6 +36,9 @@ MONEY_NERDWALLET = "https://investors.nerdwallet.com/rss/news-releases.xml"
 MONEY_NERDWALLETEVENTS = "https://investors.nerdwallet.com/rss/events.xml"
 MONEY_VALUEWALK = "https://www.valuewalk.com/feed"
 MONEY_WSJ = "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
+
+dynamodb_client = boto3.client('dynamodb')
+TABLE_NAME = 'Blog'
 
 FEEDS = {
   "CRYPTO": [
@@ -63,6 +70,7 @@ FEEDS = {
 
 class Post:
   def __init__(self, title, date, summary, author, url, tags, image=None, content=None):
+    self.type = "post"
     self.title = title
     self.date = date 
     self.summary = summary
@@ -71,6 +79,9 @@ class Post:
     self.tags = tags
     self.image = image
     self.content = content
+
+  def generate_dynamo_document():
+    pass
 
 # Get RSS FEEDS
 def get_feeds():
@@ -108,4 +119,15 @@ def main():
 
 if __name__ == "__main__":
   print("this is working")
-  main()
+  # main()
+
+  # test_item = {
+  #   'id': {'N': '2'},
+  #   'type': {'S': 'test'},
+  #   'value': {'S': '0608'}
+  # }
+
+  # res = dynamodb_client.put_item(TableName = TABLE_NAME, Item = test_item)
+  # print(res)
+
+  # Get and put: https://github.com/johnny-chivers/PutGetItemsDynamoDBPython/blob/master/dynamodb-items-basics.py
