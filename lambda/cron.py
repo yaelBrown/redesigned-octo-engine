@@ -10,7 +10,6 @@ import json
 import boto3
 import logging
 
-
 # Constants
 LOGGER = logging.getLogger()
 
@@ -125,6 +124,12 @@ if __name__ == "__main__":
   #   'id': {'N': '2'},
   #   'type': {'S': 'test'},
   #   'value': {'S': '0608'}
+  # }
+
+  # test_item = {
+  #   'id': 3,
+  #   'type': 'test',
+  #   'value': '2229'
   # }
 
   # res = dynamodb_client.put_item(TableName = TABLE_NAME, Item = test_item)
