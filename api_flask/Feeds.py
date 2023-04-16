@@ -3,8 +3,14 @@ import feedparser
 import datetime
 import psycopg2
 import json
+import mysql.connector
 
-conn = psycopg2.connect("postgresql://yael:TUvNe86RaiGwj4EcLwyQFw@quirky-linsang-10328.7tt.cockroachlabs.cloud:26257/blog_db?sslmode=verify-full")
+conn = mysql.connector.connect(
+  host="127.0.0.1",
+  database="blog_db",
+  user="admin",
+  password="passwordpassword"
+)
 cur = conn.cursor()
 
 class FeedsService:
@@ -44,34 +50,31 @@ class FeedsService:
       }
     
     f = feedparser.parse("https://www.biggerpockets.com/blog/feed")
-    f = f["entries"][0]
+    
+    f1 = f["entries"][0]
+    f2 = f["entries"][1]
 
-    f = json.dumps(_entry_to_model(f))
+    f1 = json.dumps(f1)
+    f2 = json.dumps(f2)
 
-    _query = "INSERT INTO posts (content) VALUES (%s)"
-    # _vars = ("test content",)
-    # cur.execute(_query, _vars)
-    cur.execute(_query, (f,))
-    conn.commit()
+    _query = "INSERT INTO posts (content) VALUES(%s)"
+
+    v_lst = [
+      (json.dumps("three"),),
+      (json.dumps("two"),),
+    ]
+
+    for v in v_lst:
+      cur.execute(_query, v)
+      conn.commit()
+    
     cur.close()
     conn.close()
     
     return f
     
-
+  @classmethod
   def get_feeds_helper(self):
-    def _entry_to_model(entry):
-      return {
-        "title": entry['title'] if entry['title'] else "",
-        "summary": entry['summary'] if entry['summary'] else "",
-        # "tags": entry['tags'] if entry['tags'] else "",
-        # "author": entry['author'] if entry['author'] else "",
-        # "published": entry['published'] if entry['published'] else "",
-        # "content": entry['content'][0]['value'] if entry['content'][0]['value'] else "",
-        # "media_thumbnail": entry['media_thumbnail'][0]["url"] if entry['media_thumbnail'][0]["url"] else "",
-        # "media_content": entry['media_content'][0] if entry['media_content'][0] else "",
-      }
-    
     CRYPTO_BITCOINMAGAZINE = "https://bitcoinmagazine.com/.rss/full/"
     CRYPTO_COINDESK = "https://www.coindesk.com/arc/outboundfeeds/rss/"
     CRYPTO_COINTELEGRAPH = "https://cointelegraph.com/rss"
@@ -149,29 +152,22 @@ class FeedsService:
     money_cnt = len(temp_money_content)
     print(f"money content length: {money_cnt}")
 
-    
     print("Saving to database")
-    _query = "INSERT INTO posts (CONTENT) VALUES %s"
+    _query = "INSERT IGNORE INTO posts (CONTENT, TITLE) VALUES(%s, %s)"
     content_values = temp_money_content + temp_crypto_content
     
     del temp_crypto_content
     del temp_money_content
     
     cnt = 1
-    content_values_len = len(content_values)
     for cv in content_values:
-      print(f"inserting: {cnt}/{content_values_len}")
-      temp_json = json.dumps(_entry_to_model(cv))
-      
-      cur.execute(_query, (temp_json,))
+      print(f"{cnt}/{len(content_values)}")
+      cur.execute(_query, (json.dumps(cv), cv["title"]))
       conn.commit()
-      cur.close()
-      conn.close()
-
       cnt += 1
 
-    del content_values
-
+    cur.close()
+    conn.close()
 
     print("Creating output response")
     out = {
@@ -182,7 +178,18 @@ class FeedsService:
     }
 
     return out
-
+  
+  @classmethod
+  def get_from_posts(self):
+    try: 
+      _query = "SELECT * FROM POSTS"
+      cur.execute(_query)
+      result_set = cur.fetchall()
+      
+      return result_set
+    except Exception as e:
+      print(e)
+      return False
 
 
   

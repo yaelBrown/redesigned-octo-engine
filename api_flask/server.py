@@ -11,6 +11,14 @@ app = Flask(__name__)
 def hello():
   return "Hello, I am working"
 
+@app.route("/data")
+def retrieve_data():
+  rs = fs.get_from_posts()
+  return {
+    "msg": "ok" if rs != False else "Error",
+    "data": rs
+  }
+
 @app.route("/getFeeds")
 def get_feeds():
   return fs.get_feeds_helper()
