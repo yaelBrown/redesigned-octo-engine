@@ -182,10 +182,10 @@ class FeedsService:
   @classmethod
   def get_from_posts(self):
     try: 
-      _query = "SELECT * FROM POSTS"
+      _query = "SELECT id, content FROM posts ORDER BY id DESC LIMIT 350"
       cur.execute(_query)
       result_set = cur.fetchall()
-      
+
       return result_set
     except Exception as e:
       print(e)

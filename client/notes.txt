@@ -1,0 +1,9 @@
+
+
+ok implement use reducer
+ok pull data from backend
+create error boundary
+
+build home layout
+  implement google ads
+build post layout
