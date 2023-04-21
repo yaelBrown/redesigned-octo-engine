@@ -1,0 +1,5 @@
+const CONSTANTS = {
+  GA_TRACKING_ID: "G-9S4KDLPP0C"
+}
+
+export default CONSTANTS
