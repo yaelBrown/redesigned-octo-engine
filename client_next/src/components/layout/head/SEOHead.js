@@ -10,7 +10,7 @@ export default function SeoHead({
  
   return (
     <>
-      <title>{ title } </title>
+      {/* <title>{ title } </title> */}
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />

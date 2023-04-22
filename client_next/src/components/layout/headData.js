@@ -2,11 +2,11 @@ import React from 'react'
 import AdsenseHead from './head/adsenseHead'
 import SeoHead from './head/SEOHead'
 
-export default function Head() {
+export default function HeadData() {
   return (
-    <head>
+    <>
       <SeoHead />
       <AdsenseHead />
-    </head>
+    </>
   )
 }
