@@ -16,8 +16,10 @@ export default function Home({results: query}) {
   return (
     <>
       <h1>Landing Page</h1>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
       <p>{ query.length }</p>
-
       <ul>
         <li>
           <Link href="/post/12">Post 12</Link>
