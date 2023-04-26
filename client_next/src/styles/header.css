@@ -1,9 +1,9 @@
 /* Header tag is the wrapper */
 header {
-  height: 209px;
+  height: auto;
   width: 100vw;
   flex-direction: row;
   justify-content: center;
-  margin: auto;
+  margin: 1em auto 1em auto;
   /* border: 1px solid black; */
 }

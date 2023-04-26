@@ -11,10 +11,14 @@ export default function Document() {
         <HeadData/>
       </Head>
       <Header/>
-      <body>
-        <Sidebar/>
-        <Main/>
-        <NextScript/>
+      <body className="flex flex-col m-auto container">
+        <main>
+          <Sidebar/>
+          <section>
+            <Main/>
+            <NextScript/>
+          </section>          
+        </main>       
       </body>
       <Footer/>
     </Html>

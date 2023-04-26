@@ -1,0 +1,11 @@
+footer .topfooter{
+  background-color: #d4d4d4;
+  padding: 2rem .5rem 2rem .5rem;
+  position: relative;
+  bottom: 0;
+}
+
+footer .copyright {
+  background-color: #111111;
+  width: 100%;
+}

@@ -8,7 +8,7 @@ import ShadowBorder from "./header/ShadowBorder"
 export default function Header() {
   const headerClassStack = "flex flex-row items-center content-around justify-center"
   return(
-    <header className="container">
+    <header className="container items-center">
       <div className={headerClassStack}>
         <Link href="/">
           <Image src={bwLogoWhite} />
