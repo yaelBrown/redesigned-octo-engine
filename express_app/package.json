@@ -10,10 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "compress": "^0.99.0",
+    "compression": "^1.7.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
     "handlebars": "^4.7.7",
+    "helmet": "^7.0.0",
     "mysql2": "^3.2.4",
     "sequelize": "^6.31.1"
   }
