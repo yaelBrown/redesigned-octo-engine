@@ -32,6 +32,15 @@ Post.init(
     content: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    post_type: {
+      type: DataTypes.ENUM('money', 'crypto', 'finEd'),
+      defaultValue: 'money'
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      // defaultValue: ''
     }
   },
   {

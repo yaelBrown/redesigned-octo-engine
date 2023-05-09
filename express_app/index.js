@@ -21,6 +21,8 @@ app.use(helmet())
 app.use(compression())
 
 app.use(require('./routes/'));
+app.use((req, res) => res.status(404).render('404'))
+app.use((err, req, res, next) => res.status(500).render('500'))
 
 sequelize.sync({ alter: true, force: false }).then(() => {
   app.listen(port, () => {
