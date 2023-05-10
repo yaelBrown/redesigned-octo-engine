@@ -1,1 +1,11 @@
 <h2>Home</h2>
+
+<ul>
+  {{#if posts.length}}
+    {{#each posts }}
+      <li>{{this.title}}</li>
+    {{/each }}
+  {{else}}
+    <li>No data</li>
+  {{/if}}
+</ul>

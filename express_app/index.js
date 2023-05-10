@@ -22,16 +22,22 @@ app.use(compression())
 
 app.use(require('./routes/'));
 app.use((req, res) => res.status(404).render('404'))
-app.use((err, req, res, next) => res.status(500).render('500'))
+app.use((err, req, res, next) => {
+  console.error(err)
+  res.status(500).render('500')
+})
 
-sequelize.sync({ alter: true, force: false }).then(() => {
+sequelize.sync({ alter: false, force: false }).then(() => {
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })  
 });
 
-// WOrk on python script to add values similar to the ones in the models to that database
 // Get post to work for create post and save into database
+  // Posts are posting to backend, save them into database. 
+  // setup file upload to s3 bucket. 
+
+// WOrk on python script to add values similar to the ones in the models to that database
 
 // Figure out deployment
 // Add gtag, fb pixel, adsense to page

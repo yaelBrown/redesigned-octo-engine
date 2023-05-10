@@ -13,8 +13,8 @@ Post.init(
       allowNull: false
     },
     created_at: {
-      type: DataTypes.timestamps,
-      allowNull: false
+      type: DataTypes.DATE,
+      allowNull: true
     },
     title: {
       type: DataTypes.STRING,
