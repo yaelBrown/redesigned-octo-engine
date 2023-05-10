@@ -33,11 +33,11 @@ sequelize.sync({ alter: false, force: false }).then(() => {
   })  
 });
 
-// Get post to work for create post and save into database
-  // Posts are posting to backend, save them into database. 
-  // setup file upload to s3 bucket. 
+// Get 1 post by id
 
-// WOrk on python script to add values similar to the ones in the models to that database
+// setup file upload to s3 bucket. 
+
+// Work on python script to add values similar to the ones in the models to that database
 
 // Figure out deployment
 // Add gtag, fb pixel, adsense to page
