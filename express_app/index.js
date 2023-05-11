@@ -33,7 +33,6 @@ sequelize.sync({ alter: false, force: false }).then(() => {
   })  
 });
 
-// Get 1 post by id
 
 // setup file upload to s3 bucket. 
 

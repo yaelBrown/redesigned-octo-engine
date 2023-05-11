@@ -4,7 +4,6 @@ const sequelize = require('../config/connection')
 class Post extends Model {}
 
 Post.init(
-  // Define Fields and Datatypes here
   {
     id: {
       type: DataTypes.INTEGER,

@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const multiparty = require('multiparty')
 const PostService = require('../services/postsService')
-// const Post = require('../models/postsModel')
 
 const ps = new PostService()
 const Posts = require('../models/index').Posts
