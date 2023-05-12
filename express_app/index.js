@@ -36,8 +36,6 @@ sequelize.sync({ alter: false, force: false }).then(() => {
 
 // setup file upload to s3 bucket. 
 
-// Work on python script to add values similar to the ones in the models to that database
-
 // Figure out deployment
 // Add gtag, fb pixel, adsense to page
 
