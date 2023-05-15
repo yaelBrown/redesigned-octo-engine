@@ -21,6 +21,7 @@
     "multipart": "^0.1.5",
     "multiparty": "^4.2.3",
     "mysql2": "^3.2.4",
+    "request": "^2.88.2",
     "sequelize": "^6.31.1"
   }
 }

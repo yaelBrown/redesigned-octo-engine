@@ -2,3 +2,47 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+header {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header image {
+  max-width: 100%;
+  margin: auto;
+}
+
+header nav ul {
+  list-style: none; 
+  list-style-type: none;
+  justify-content: center;
+  text-align: center;
+}
+
+header nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 1em;
+  padding: 5px;
+  transition: background .1s, color .1s;
+}
+
+header nav ul li:hover {
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 5px;
+  transition: background .1s, color .1s, text-decoration .1s;
+}
+
+header nav ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header nav ul li a h3 {
+  margin-bottom: 0;
+}

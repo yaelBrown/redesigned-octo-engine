@@ -1,11 +1,14 @@
 const router = require('express').Router()
+const request = require('request')
 const { Posts } = require('../models')
 
 router.get('/', async (req, res) => {
   const postData = await Posts.findAll({ limit: 30 })
   const posts = postData.map((post) => post.get({ plain: true }))
+  console.log(process.env.PORT)
 
-  res.render('home', {posts})
+
+  res.render('home', {posts, port: process.env.PORT})
 })
 
 router.get('/search', (req, res) => {
@@ -35,5 +38,14 @@ router.get('/finEd', (req, res) => {
   }
   res.render('category', {data})
 })
+
+router.get('/image', (req, res) => {
+  const imageUrl = req.query.url;
+  if(!imageUrl) {
+    res.status(400).send('Missing image URL')
+    return
+  }
+  request.get(imageUrl).pipe(res)
+} )
 
 module.exports = router

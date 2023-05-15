@@ -7,43 +7,42 @@
     <meta name="description" content="Passive income, finance, and crypto blog." />
     {{!-- <link rel="canonical" href={canonicalUrl} /> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; child-src 'none'; object-src 'none';">
+
     <link rel="icon" href="/favicon.ico" />
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="BigWallets - Personal Finance, Passive Income, and Crypto News" />
     {{!-- <meta property="og:type" content={ogType} /> --}}
     <meta property="og:description" content="Passive income, finance, and crypto blog." />
-    {{!-- <meta property="og:image" content={ogImgUrl} />
+    {{!-- <meta property="og:image" content={ogImgUrl}
     <meta property="og:url" content={canonicalUrl} /> --}}
 
-    {{!-- 
-    <Script async src=https://www.googletagmanager.com/gtag/js?id=tracking-id />
-    <Script 
-      async
-      strategy="beforeInteractive"
-      dangerouslySetInnerHTML={{
-      __html: 
-        `window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', gtag-id);`
-    }}/>
+    {{!-- GTag --}}
+    {{!-- Adsense --}}
 
-    <Script
-      id="Adsense-id"
-      data-ad-client="ca-pub-987************676"
-      async
-      strategy="beforeInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    /> 
-    --}}
     <link href="/css/main.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>BigWallets - Personal Finance, Passive Income, and Crypto News</title>
   </head>
   <body>
+    <header class="container">
+      <img src="/images/logo/BigWallets-blog-logo-white.png" alt="BigWallets Logo" />
+      <nav>
+        <ul>
+          <li><a href="/"><h3>Home</h3></a></li>
+          <li><a href="/finance"><h3>Finance</h3></a></li>
+          <li><a href="/crypto"><h3>Crypto</h3></a></li>
+          <li>
+            <form action="/search">
+              <input type="text" placeholder="search" id="navbar-search" /> 
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <main class="container">
-      <h1>Main.handlebars</h1>
       {{{body}}}
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </main>

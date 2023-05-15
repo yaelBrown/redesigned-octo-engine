@@ -1,0 +1,16 @@
+
+#home-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+#home-left {
+  width: 100%;
+  border: 1px solid black;
+}
+
+aside {
+  width: 200px;
+  height: 1000px;
+  border: 1px solid black;
+}

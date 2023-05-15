@@ -1,11 +1,17 @@
-<h2>Home</h2>
+<link rel="stylesheet" href="/css/home.css"/>
+<section id="home-wrapper">
+  <section id="home-left">
+    <ul>
+      {{#if posts.length}}
+        {{#each posts }}
+          <li>{{this.title}}</li>
+          <img src="http://localhost:8080/image?url={{this.image}}"" /> 
+        {{/each }}
+      {{else}}
+        <li>No data</li>
+      {{/if}}
+    </ul>
 
-<ul>
-  {{#if posts.length}}
-    {{#each posts }}
-      <li>{{this.title}}</li>
-    {{/each }}
-  {{else}}
-    <li>No data</li>
-  {{/if}}
-</ul>
+  </section>
+  <aside id="home-righ">r</aside>
+</section>

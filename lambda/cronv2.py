@@ -4,7 +4,8 @@ import feedparser
 import mysql.connector
 
 conn = mysql.connector.connect(
-  host="127.0.0.1", 
+  # host="127.0.0.1", 
+  host="database-1.c6ptyiz1s7ty.us-east-1.rds.amazonaws.com",
   database="blog_db",
   user="admin",
   password="passwordpassword"
