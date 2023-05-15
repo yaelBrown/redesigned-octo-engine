@@ -4,9 +4,12 @@ const { Posts } = require('../models')
 
 router.get('/', async (req, res) => {
   const postData = await Posts.findAll({ limit: 30 })
-  const posts = postData.map((post) => post.get({ plain: true }))
-  console.log(process.env.PORT)
-
+  const temp = postData.map((post) => post.get({ plain: true }))
+  const posts = {}
+  
+  temp.map((e,i) => {
+    posts[i] = e
+  })
 
   res.render('home', {posts, port: process.env.PORT})
 })

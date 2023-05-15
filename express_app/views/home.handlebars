@@ -1,17 +1,234 @@
 <link rel="stylesheet" href="/css/home.css"/>
 <section id="home-wrapper">
-  <section id="home-left">
-    <ul>
-      {{#if posts.length}}
-        {{#each posts }}
-          <li>{{this.title}}</li>
-          <img src="http://localhost:8080/image?url={{this.image}}"" /> 
-        {{/each }}
-      {{else}}
-        <li>No data</li>
-      {{/if}}
-    </ul>
-
-  </section>
-  <aside id="home-righ">r</aside>
+  <div id="home-left">
+    <img id="hero-ad" src="/images/ads/placeholder728x90.png" />
+    {{#if posts}}
+      <section id="hero">
+        <div id="hero-main">
+          <a href="http://localhost:8080/posts/{{posts.0.id}}">
+            <img id="hero-main-img" src="http://localhost:8080/image?url={{posts.0.image}}" /> 
+            <h6>{{posts.0.title}}</h6>
+          </a>
+          <p>{{posts.0.summary}}</p>
+        </div>
+        <div id="hero-right">
+          <div class="hero-right-items" id="hero-right-one">
+            <a href="http://localhost:8080/posts/{{posts.1.id}}">
+              <img src="http://localhost:8080/image?url={{posts.1.image}}" />
+              <h6>{{posts.1.title}}</h6>
+            </a>
+          </div>
+          <div class="hero-right-items" id="hero-right-two">
+            <a href="http://localhost:8080/posts/{{posts.2.id}}">
+              <img src="http://localhost:8080/image?url={{posts.2.image}}" />
+              <h6>{{posts.2.title}}</h6>
+            </a>
+          </div>
+          <div class="hero-right-items" id="hero-right-three">
+            <a href="http://localhost:8080/posts/{{posts.3.id}}">
+              <img src="http://localhost:8080/image?url={{posts.3.image}}" />
+              <h6>{{posts.3.title}}</h6>
+            </a>
+          </div>
+        </div>
+      </section>
+      <hr/>
+      <img id="hero-ad" src="/images/ads/placeholder728x90.png" />
+      <section id="articles">
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.4.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.4.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.4.id}}">
+              <h6>{{posts.4.title}}</h6>
+            </a>
+            <p>{{posts.4.summary}}</p>
+            <small>{{posts.4.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.5.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.5.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.5.id}}">
+              <h6>{{posts.5.title}}</h6>
+            </a>
+            <p>{{posts.5.summary}}</p>
+            <small>{{posts.5.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.6.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.6.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.6.id}}">
+              <h6>{{posts.6.title}}</h6>
+            </a>
+            <p>{{posts.6.summary}}</p>
+            <small>{{posts.6.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.7.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.7.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.7.id}}">
+              <h6>{{posts.7.title}}</h6>
+            </a>
+            <p>{{posts.7.summary}}</p>
+            <small>{{posts.7.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.8.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.8.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.8.id}}">
+              <h6>{{posts.8.title}}</h6>
+            </a>
+            <p>{{posts.8.summary}}</p>
+            <small>{{posts.8.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.9.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.9.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.9.id}}">
+              <h6>{{posts.9.title}}</h6>
+            </a>
+            <p>{{posts.9.summary}}</p>
+            <small>{{posts.9.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.10.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.10.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.10.id}}">
+              <h6>{{posts.10.title}}</h6>
+            </a>
+            <p>{{posts.10.summary}}</p>
+            <small>{{posts.10.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.11.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.11.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.11.id}}">
+              <h6>{{posts.11.title}}</h6>
+            </a>
+            <p>{{posts.11.summary}}</p>
+            <small>{{posts.11.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.12.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.12.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.12.id}}">
+              <h6>{{posts.12.title}}</h6>
+            </a>
+            <p>{{posts.12.summary}}</p>
+            <small>{{posts.12.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.13.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.13.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.13.id}}">
+              <h6>{{posts.13.title}}</h6>
+            </a>
+            <p>{{posts.13.summary}}</p>
+            <small>{{posts.13.author}}</small>
+          </div>
+        </article>
+        <article>
+          <a href="http://localhost:8080/posts/{{posts.14.id}}">
+            <img class="article-image" src="http://localhost:8080/image?url={{posts.14.image}}" />
+          </a>
+          <div class="article-text">
+            <a href="http://localhost:8080/posts/{{posts.14.id}}">
+              <h6>{{posts.14.title}}</h6>
+            </a>
+            <p>{{posts.14.summary}}</p>
+            <small>{{posts.14.author}}</small>
+          </div>
+        </article>
+        
+      </section>
+      <img id="hero-ad" src="/images/ads/placeholder728x90.png" />
+  </div>
+  <aside id="home-right">
+    <section id="aside-posts">
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.15.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.15.image}}" />
+          <small>{{posts.15.title}}</small>
+        </a>
+      </div>
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.16.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.16.image}}" />
+          <small>{{posts.16.title}}</small>
+        </a>
+      </div>
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.17.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.17.image}}" />
+          <small>{{posts.17.title}}</small>
+        </a>
+      </div>
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.18.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.18.image}}" />
+          <small>{{posts.18.title}}</small>
+        </a>
+      </div>
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.19.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.19.image}}" />
+          <small>{{posts.19.title}}</small>
+        </a>
+      </div>
+    </section>
+    <section id="aside-ad-image">
+      <img src="/images/ads/placeholder160x600.jpg" />
+    </section>
+    <section id="aside-posts-after-ad">
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.20.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.20.image}}" />
+          <small>{{posts.20.title}}</small>
+        </a>
+      </div>
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.21.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.21.image}}" />
+          <small>{{posts.21.title}}</small>
+        </a>
+      </div>
+      <div class="aside-items">
+        <a href="http://localhost:8080/posts/{{posts.22.id}}">
+          <img class="aside-image" src="http://localhost:8080/image?url={{posts.22.image}}" />
+          <small>{{posts.22.title}}</small>
+        </a>
+      </div>
+    </section>
+  </aside>
+    {{else}}
+      <p>No data</p>
+    {{/if}}
 </section>
