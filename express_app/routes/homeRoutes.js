@@ -18,6 +18,18 @@ router.get('/search', (req, res) => {
   res.render('search')
 })
 
+router.get('/about', (req, res) => {
+  res.render('about')
+})
+
+router.get('/privacy', (req, res) => {
+  res.render('privacy')
+})
+
+router.get('/terms', (req, res) => {
+  res.render('terms')
+})
+
 // router.post('search') 
 // get query, pull from db, return results 
 

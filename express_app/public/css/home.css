@@ -14,6 +14,10 @@
   width: 100%;
 }
 
+#home-left hr {
+  width: 728px;
+}
+
 #hero {
   display: flex;
   flex-direction: row;
@@ -30,6 +34,10 @@
 
 .hero-right-items img {
   max-width: 100px;
+}
+
+article {
+  padding-right: 2.5rem;
 }
 
 .article-image {

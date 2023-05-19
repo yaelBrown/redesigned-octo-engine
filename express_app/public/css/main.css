@@ -62,7 +62,7 @@ header nav ul li {
 header nav ul li:hover {
   text-decoration: none;
   background: black;
-  color: white;
+  color: white !important;
   padding: 5px;
   transition: background .1s, color .1s, text-decoration .1s;
 }
@@ -74,4 +74,40 @@ header nav ul li a {
 
 header nav ul li a h3 {
   margin-bottom: 0;
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #111111;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+#footer-wrapper {
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: space-between;
+}
+
+footer ul {
+  padding: 0;
+  align-self: center;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer a:link,
+footer a:hover,
+footer a:active,
+footer a:visited {
+  color: white;
+}
+
+footer img {
+  align-self: center;
 }
