@@ -1,12 +1,11 @@
 <link rel="stylesheet" href="/css/post.css"/>
 {{#if post}}
-  <section class="container">
+  <section id="postSection" class="container">
     <img id="post-image" src="http://localhost:8080/image?url={{post.image}}" />
     <h3>{{post.title}}</h3>
     <h5>{{{post.summary}}}</h5>
     <p>{{post.author}}</p>
     <div id="content">{{{post.content}}}</div>
-    <script src="/js/post.js"></script>
   </section>
 {{else}}
   <p>Post not found</p>
