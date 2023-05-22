@@ -3,7 +3,7 @@ const request = require('request')
 const { Posts } = require('../models')
 
 router.get('/', async (req, res) => {
-  const postData = await Posts.findAll({ limit: 30 })
+  const postData = await Posts.findAll({ limit: 30, order: [['id', 'DESC']] })
   const temp = postData.map((post) => post.get({ plain: true }))
   const posts = {}
   

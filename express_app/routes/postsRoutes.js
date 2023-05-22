@@ -9,20 +9,6 @@ router.get('/', (req, res) => {
   res.render('post')
 })
 
-router.get('/:id', async (req, res) => {
-  try {
-    const postData = await Posts.findByPk(req.params.id)
-
-    if (postData) {
-      const post = postData.get({ plain: true })
-      res.render('post', { post })
-    } else {
-      res.status(404).render('post')
-    }
-  } catch(err) {
-    throw new Error(`Error getting post from database: ${err}`)
-  }
-})
 
 if (process.env.NODE_ENV === "development") {
   router.get('/create', (req, res) => {
@@ -54,5 +40,20 @@ if (process.env.NODE_ENV === "development") {
     })
   })
 }
+
+router.get('/:id', async (req, res) => {
+  try {
+    const postData = await Posts.findByPk(req.params.id)
+
+    if (postData) {
+      const post = postData.get({ plain: true })
+      res.render('post', { post })
+    } else {
+      res.status(404).render('post')
+    }
+  } catch(err) {
+    throw new Error(`Error getting post from database: ${err}`)
+  }
+})
 
 module.exports = router

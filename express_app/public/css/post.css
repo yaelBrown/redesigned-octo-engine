@@ -3,5 +3,9 @@
 }
 
 #db-str {
-  display: block;
+  display: none;
+}
+
+#content {
+  max-width: 780px;
 }
