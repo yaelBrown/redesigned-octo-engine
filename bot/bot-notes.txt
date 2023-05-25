@@ -1,0 +1,11 @@
+Most common userAgents and test website
+  https://techblog.willshouse.com/2012/01/03/most-common-user-agents/
+
+Whoer - Test website
+  https://whoer.net/
+
+
+
+
+Created Fork of chrome plugin
+  https://github.com/yaelBrown/browser-fingerprint-protector
