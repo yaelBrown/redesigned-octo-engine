@@ -9,3 +9,11 @@ Whoer - Test website
 
 Created Fork of chrome plugin
   https://github.com/yaelBrown/browser-fingerprint-protector
+
+Google Toolbox 
+  https://toolbox.googleapps.com/apps/browserinfo/
+
+
+
+Change timezone in browserinfo
+  https://stackoverflow.com/questions/44688079/how-do-i-set-a-timezone-in-selenium-chromedriver
