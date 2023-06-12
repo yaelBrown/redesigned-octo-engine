@@ -17,3 +17,29 @@ Google Toolbox
 
 Change timezone in browserinfo
   https://stackoverflow.com/questions/44688079/how-do-i-set-a-timezone-in-selenium-chromedriver
+
+
+
+
+
+
+
+Create venv
+  python -m venv ./venv
+
+Activate venv
+  Linux
+    source venv/bin/activate
+  Windows
+    venv\Scripts\activate.bat
+
+Deactivate
+  Linux/Windows
+    deactivate
+
+
+
+driver.close() 
+  closes tab
+
+driver.quit()
